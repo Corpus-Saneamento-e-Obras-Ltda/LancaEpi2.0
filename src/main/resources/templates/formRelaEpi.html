@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
+
+<head>
+    <title>Lança EPI</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="materialize/css/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper nav-bar">
+                <a href="#" class="brand-logo">Cadastro de Epi </a>
+
+
+            </div>
+        </nav>
+    </header>
+
+    <form class="container CadastroEpi" method="post">
+        <div class="row">
+            <div class="input-field col s4">
+                Coligada:<input type="text" value="" name="coligada" />
+            </div>
+
+            <div class="input-field col s4">
+                Centro de custo: <input type="text" value="" name="centrocusto" />
+            </div>
+            <div class="input-field col s4">
+                Código da função: <input type="text" value="" name="codigofuncao" />
+            </div>
+
+            <div class="input-field col s4">
+                Código EPI: <input type="text" value="" name="idproduto" />
+            </div>
+
+            <div class="input-field col s4">
+                Duração: <input type="text" value="" name="diasduracao" />
+            </div>
+
+            <div class="input-field col s4">
+                Qtde de Retirada: <input type="text" value="" name="quantidaderetirada" />
+            </div>
+            <div class="input-field col s4">
+                Qtde de Troca: <input type="text" value="" name="quantidadetroca" />
+            </div>
+            <div class="input-field col s4">
+                Tipo: <input type="text" value="" name="tipo" />
+            </div>
+            <div class="input-field col s4">
+                Tamanho: <input type="text" value="" name="tamanho" />
+            </div>
+
+
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <button class="btn waves-effect waves-light botao " type="submit" name="action">Salvar
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <a href="/homePage" class="btn waves-effect waves-light botao "><i
+                            class="material-icons right">cancel</i>Cancelar</a>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+    </form>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="materialize/js/custom.js"></script>
+
+</html>
