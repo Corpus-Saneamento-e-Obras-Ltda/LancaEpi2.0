@@ -2,7 +2,6 @@ package br.com.corpus.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,10 +27,11 @@ public class RelacFuncEpi implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;	
 	
+
 	private String coligada;
-	
+
 	private String centrocusto;
-	
+
 	private String codigofuncao;
 
 	private Integer idproduto;

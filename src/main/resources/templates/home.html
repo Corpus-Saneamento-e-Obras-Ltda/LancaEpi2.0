@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
-
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
+<meta charset="utf-8" />
 <head>
 
-	<title>Lanca-Epi</title>
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
-	<link type="text/css" rel="stylesheet" href="materialize/css/style.css" media="screen,projection" />
-	<!--Let browser know website is optimized for mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lanca-Epi</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="materialize/css/materialize.min.css" media="screen,projection" />
+<link type="text/css" rel="stylesheet" href="materialize/css/style.css"
+	media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 
@@ -21,20 +25,22 @@
 	<header>
 		<nav>
 			<div class=" nav-wrapper nav-bar">
-				<a href="#" class="brand-logo">Lista de Epi</a>
+				<a href="#" class="brand-logo">Tabela de listagem dos
+					lançamentos</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li>
-						<a href=" /CadastroRel" class="waves-effect waves-light btn"><i
-								class="material-icons left">add_circle_outline</i> Cadastrar
-							Epi</a>
+					<li><a href=" /CadastroRel"
+						class="waves-effect waves-light btn"><i
+							class="material-icons left">add_circle_outline</i> Cadastrar Epi</a>
 					</li>
 
 				</ul>
+			
 			</div>
 		</nav>
-	</header>
 
-	<table class="container">
+	</header>
+	<br>
+	<table class="container tabelaEpi">
 		<thead>
 
 			<tr>
@@ -47,30 +53,47 @@
 				<th>Troca</th>
 				<th>Tipo</th>
 				<th>Tamanho</th>
+				<th>Deletar</th>
 			</tr>
+
 		</thead>
+
 		<tbody>
-			<tr th:each="evento: ${eventos}">
 
-				<td><a th:href="@{/{codigo}(codigo=${evento.codigo})}">
-						<span th:text="${evento.nome}"></span>
+			<tr th:each="RelEpi : ${epis}">
 
-					</a></td>
-				<td><span th:text="${evento.local}"></span></td>
-				<td><span th:text="${evento.data}"></span></td>
-				<td><span th:text="${evento.horario}"></span></td>
-				<td><a class="waves-effect waves-light btn-floating deletar"
-						th:href="${(#mvc.url('EC#deletarEvento').arg(0,evento.codigo)).build()}"><i
+			
+				<td><span th:text="${RelEpi.coligada}"
+					></span></td>
+				
+			
+				
+				<td align="center"><span th:text="${RelEpi.centrocusto}"></span></td>
+				<td align="center"><span th:text="${RelEpi.codigofuncao}"></span></td>
+				<td align="center"><span th:text="${RelEpi.idproduto}"></span></td>
+				<td align="center"><span th:text="${RelEpi.diasduracao}"></span></td>
+				<td align="center"><span th:text="${RelEpi.quantidaderetirada}"></span></td>
+				<td align="center"><span th:text="${RelEpi.quantidadetroca}"></span></td>
+				<td align="center"><span th:text="${RelEpi.tipo}"></span></td>				
+				<td align="center"><span th:text="${RelEpi.tamanho}"></span></td>
+<td><a class="botao"
+						th:href="${(#mvc.url('RC#deletarEpi').arg(0,RelEpi.id)).build()}"><i
 							class="material-icons left">delete_forever</i></a>
 				</td>
+
+				
+
+	
 			</tr>
+
 
 		</tbody>
 	</table>
-
+	
 
 </body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
 </html>

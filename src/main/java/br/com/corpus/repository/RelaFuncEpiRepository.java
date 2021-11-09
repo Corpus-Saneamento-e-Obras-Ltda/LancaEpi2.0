@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.corpus.model.RelacFuncEpi;
 
-public interface RelaFuncEpiRepository extends CrudRepository<RelacFuncEpi, String> {
+public interface RelaFuncEpiRepository extends CrudRepository<RelacFuncEpi, Long> {
 
     @RequestMapping("/homePageList")
     default ModelAndView listaEpi() {
@@ -16,5 +16,10 @@ public interface RelaFuncEpiRepository extends CrudRepository<RelacFuncEpi, Stri
         return mv;
 
     }
+
+	RelacFuncEpi findById(long id);
+
+	
+
 
 }
