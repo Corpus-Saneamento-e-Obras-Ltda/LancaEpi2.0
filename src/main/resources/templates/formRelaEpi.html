@@ -63,19 +63,18 @@
 				Qtde de Troca: <input type="text" value="" name="quantidadetroca" /><br />
 			</div>
 			<div class="input-field col s4">
-				Tipo: <input type="text" value="" list="ListCat" name="tipo" /><br />
-				<br />
-				<datalist id="ListCat">
-
-					<option value="CABECA">
-					<option value="CALCA">
-					<option value="CAMISA">
-					<option value="MAOS">
-					<option value="OLHOS">
-					<option value="OUTROS">
-					<option value="OUVIDOS">
-					<option value="PES">
+			
+				Tipo:<input type="text" value="" list="ListCat" name="tipo" /><br />				
+				<datalist id= "ListCat">
+				<option th:each= "ListCat : ${ListCat}"				
+				th:value="${ListCat.nome_categoria}"
+				th:text="${ListCat.id}">				
 				</datalist>
+				
+			
+				
+			
+				
 </div>
 <div class="input-field col s4" >
 				Tamanho: <input type="text" value="" name="tamanho" /><br /> <br />

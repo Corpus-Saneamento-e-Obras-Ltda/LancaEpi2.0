@@ -26,16 +26,15 @@ public class RelacController {
 
 	@RequestMapping(value = "/CadastroRel", method = RequestMethod.GET)
 	public String form() {
-		return "formRelaEpi";
+		
+		return "redirect:/Cadastro";
 
 	}
 
-	@RequestMapping(value = "/CadastroRel", method = RequestMethod.POST)
-	public String form(RelacFuncEpi RelEpi ) {
+	@RequestMapping(value = "/Cadastro", method = RequestMethod.POST)
+	public String form(RelacFuncEpi RelEpi ) {		
 		
-		
-		rfr.save(RelEpi);
-		
+		rfr.save(RelEpi);		
 
 		return "redirect:/CadastroRel";
 

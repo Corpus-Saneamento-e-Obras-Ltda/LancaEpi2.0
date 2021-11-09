@@ -13,6 +13,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,15 +27,14 @@ public class RelacFuncEpi implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;	
+	private Long id;
 	
-
 	private String coligada;
-
+	
 	private String centrocusto;
-
+	
 	private String codigofuncao;
-
+	
 	private Integer idproduto;
 
 	private Integer diasduracao;

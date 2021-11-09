@@ -34,7 +34,7 @@
 					</li>
 
 				</ul>
-			
+
 			</div>
 		</nav>
 
@@ -62,34 +62,29 @@
 
 			<tr th:each="RelEpi : ${epis}">
 
-			
-				<td><span th:text="${RelEpi.coligada}"
-					></span></td>
-				
-			
-				
+
+				<td align="center"><span th:text="${RelEpi.coligada}"></span></td>
 				<td align="center"><span th:text="${RelEpi.centrocusto}"></span></td>
 				<td align="center"><span th:text="${RelEpi.codigofuncao}"></span></td>
 				<td align="center"><span th:text="${RelEpi.idproduto}"></span></td>
 				<td align="center"><span th:text="${RelEpi.diasduracao}"></span></td>
 				<td align="center"><span th:text="${RelEpi.quantidaderetirada}"></span></td>
 				<td align="center"><span th:text="${RelEpi.quantidadetroca}"></span></td>
-				<td align="center"><span th:text="${RelEpi.tipo}"></span></td>				
+				<td align="center"><span th:text="${RelEpi.tipo}"></span></td>
 				<td align="center"><span th:text="${RelEpi.tamanho}"></span></td>
-<td><a class="botao"
+				
+				<td><a class="waves-effect waves-light  deletar "
 						th:href="${(#mvc.url('RC#deletarEpi').arg(0,RelEpi.id)).build()}"><i
 							class="material-icons left">delete_forever</i></a>
 				</td>
 
-				
 
-	
 			</tr>
 
 
 		</tbody>
 	</table>
-	
+
 
 </body>
 <script type="text/javascript"
