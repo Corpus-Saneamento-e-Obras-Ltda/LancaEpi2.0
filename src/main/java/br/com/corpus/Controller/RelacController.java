@@ -20,18 +20,14 @@ public class RelacController {
 
 	@Autowired
 	private RelaFuncEpiRepository rfr;
-	
+
 
 	
 
-	@RequestMapping(value = "/CadastroRel", method = RequestMethod.GET)
-	public String form() {
-		
-		return "redirect:/Cadastro";
 
-	}
+	
 
-	@RequestMapping(value = "/Cadastro", method = RequestMethod.POST)
+	@RequestMapping(value = "/cadastro", method = RequestMethod.POST)
 	public String form(RelacFuncEpi RelEpi ) {		
 		
 		rfr.save(RelEpi);		
@@ -41,11 +37,11 @@ public class RelacController {
 	}
 	@RequestMapping("/deletar")
 	public String deletarEpi(long id) {
-		
+		String rd ="redirect:/homePage";
 		RelacFuncEpi rel = rfr.findById(id);
 		rfr.delete(rel);
 		
-		return "redirect:/homePage";
+		return rd;
 	}
 		
 	}

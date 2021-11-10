@@ -28,7 +28,7 @@
 		</nav>
 	</header>
 
-	<form class="container CadastroEpi" method="post">
+	<form class="container CadastroEpi" method="get" action="listaPrd">
 		<div class="row">
 			<div class="input-field col s4">
 				Coligada:<input type="text" value="" list="Col" name="coligada" /><br />
@@ -44,23 +44,37 @@
 
 			</div>
 			<div class="input-field col s4">
-				Centro de custo: <input type="text" value="" name="centrocusto" /><br />
+				Centro de custo: <input type="text" list"ListCC" value="" name="centrocusto" /><br />
+				<datalist id="ListCC">
+				<option th:each = "ListCC :${listacc}"
+				th:value="ListCC.codccusto"
+				th:text="ListCC.nome">
+				</datalist>
 			</div>
 			<div class="input-field col s4">
 				Código da função: <input type="text" value="" name="codigofuncao" /><br />
 			</div>
 			<div class="input-field col s4">
-				Código EPI: <input type="text" value="" name="idproduto" /><br />
+				Código EPI Protheus: <input type="text" value="" list="ListPrd" name="idproduto" /><br />
+				
+				<datalist id="ListPrd">
+				<option th:each = "ListPrd :${ListPrd}"
+				th:value="${ListPrd.id}"
+				th:text="${ListPrd.nome}">
+				
+				</datalist>
+				
+				
 			</div>
 			<div class="input-field col s4">
 				Duração: <input type="text" value="" name="diasduracao" /><br />
 			</div>
 			<div class="input-field col s4">
-				Qtde de Retirada: <input type="text" value=""
+				Quantidade de Retirada: <input type="text" value=""
 					name="quantidaderetirada" /><br />
 			</div>
 			<div class="input-field col s4">
-				Qtde de Troca: <input type="text" value="" name="quantidadetroca" /><br />
+				Quantidade de Troca: <input type="text" value="" name="quantidadetroca" /><br />
 			</div>
 			<div class="input-field col s4">
 			

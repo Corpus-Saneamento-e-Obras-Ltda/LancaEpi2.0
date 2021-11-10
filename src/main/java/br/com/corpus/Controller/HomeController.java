@@ -10,6 +10,7 @@ import br.com.corpus.repository.RelaFuncEpiRepository;
 
 @Controller
 public class HomeController {
+	
 	@Autowired
 	private RelaFuncEpiRepository rr;
 	
@@ -17,14 +18,20 @@ public class HomeController {
 	@RequestMapping("/homePage")
 	public ModelAndView home() {
 		
-		ModelAndView mv= new ModelAndView("home");
+		ModelAndView mv= new ModelAndView("/home");
 		Iterable<RelacFuncEpi> EpiFUnc = rr.findAll();
 		mv.addObject("epis", EpiFUnc);
+		
 		return mv;
 	}
-	
-	
+
+			
+			
+
+		
+		
+	}
 
 	
 
-}
+
